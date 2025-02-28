@@ -5,7 +5,7 @@ class Solution {
 
         for (int i = 0; i < n; i++) {
             int currentValue = getValue((s.charAt(i)));
-            if(i < n - 1 && currentValue < getValue(s.charAt(i + 1))) {
+            if (i < n - 1 && currentValue < getValue(s.charAt(i + 1))) {
                 total -= currentValue;
             } else {
                 total += currentValue;
