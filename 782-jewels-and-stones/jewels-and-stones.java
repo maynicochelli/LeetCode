@@ -4,7 +4,7 @@ class Solution {
         for (char c : jewels.toCharArray()) {
             jewelsSet.add(c);
         }
-
+        
         int total = 0;
         for (char c : stones.toCharArray()) {
             if (jewelsSet.contains(c)) {
