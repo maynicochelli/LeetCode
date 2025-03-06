@@ -20,5 +20,5 @@ class Solution {
             current = temp;
         }
         return previous;
-     }
+    }
 }
