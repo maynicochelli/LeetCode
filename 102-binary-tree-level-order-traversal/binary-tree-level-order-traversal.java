@@ -15,24 +15,23 @@
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        // BFS - queue or Deque
+        // BFS - Queue
         List<List<Integer>> levels = new ArrayList<List<Integer>>();
         if (root == null) {
             return levels;
         }
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Deque<TreeNode> queue = new ArrayDeque<TreeNode>();
         queue.add(root);
         int level = 0;
         while(!queue.isEmpty()) {
             levels.add(new ArrayList<Integer>());
             int levelLength = queue.size();
-
             for (int i = 0; i < levelLength; i++) {
-                TreeNode node = queue.remove();
+                TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
-                if (node.left != null) queue.add(node.left);
-                if (node.right != null) queue.add(node.right);
+                if (node.left != null) queue.addLast(node.left);
+                if (node.right != null) queue.addLast(node.right);
             }
             level++;
         }
