@@ -15,19 +15,17 @@
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        // BFS - Queue
-        List<List<Integer>> levels = new ArrayList<List<Integer>>();
+        List<List<Integer>> levels = new ArrayList<List<Integer>>(); // return List
         if (root == null) {
             return levels;
         }
-
-        Deque<TreeNode> queue = new ArrayDeque<TreeNode>();
-        queue.add(root);
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.addLast(root);
         int level = 0;
         while(!queue.isEmpty()) {
             levels.add(new ArrayList<Integer>());
-            int levelLength = queue.size();
-            for (int i = 0; i < levelLength; i++) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
                 TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
                 if (node.left != null) queue.addLast(node.left);
