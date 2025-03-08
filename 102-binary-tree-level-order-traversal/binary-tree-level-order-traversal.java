@@ -20,14 +20,14 @@ class Solution {
         Deque<TreeNode> queue = new ArrayDeque<>();
         queue.addLast(root);
         int level = 0;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             levels.add(new ArrayList<Integer>());
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
                 if (node.left != null) queue.addLast(node.left);
-                if (node.right != null) queue.addLast(node.right); 
+                if (node.right != null) queue.addLast(node.right);
             }
             level++;
         }
