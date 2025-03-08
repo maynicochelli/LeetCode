@@ -6,12 +6,9 @@ class Solution {
 
         HashMap<Character, Integer> sMap = new HashMap<>();
         HashMap<Character, Integer> tMap = new HashMap<>();
-
-        for (char c: s.toCharArray()) {
-            sMap.put(c, sMap.getOrDefault(c, 0) + 1);
-        }
-        for (char c : t.toCharArray()) {
-            tMap.put(c, tMap.getOrDefault(c, 0) + 1);
+        for (int i = 0; i < s.length(); i++) {
+            sMap.put(s.charAt(i), sMap.getOrDefault(s.charAt(i), 0) + 1);
+            tMap.put(t.charAt(i), tMap.getOrDefault(t.charAt(i), 0) + 1);
         }
 
         return sMap.equals(tMap);
