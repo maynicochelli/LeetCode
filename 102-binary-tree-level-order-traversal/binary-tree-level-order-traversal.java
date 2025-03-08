@@ -17,10 +17,10 @@ class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> levels = new ArrayList<List<Integer>>();
         if (root == null) return levels;
-        Deque<TreeNode> queue = new ArrayDeque();
+        Deque<TreeNode> queue = new ArrayDeque<>();
         queue.addLast(root);
         int level = 0;
-        while (!queue.isEmpty()) {
+        while(!queue.isEmpty()) {
             levels.add(new ArrayList<Integer>());
             int size = queue.size();
             for (int i = 0; i < size; i++) {
