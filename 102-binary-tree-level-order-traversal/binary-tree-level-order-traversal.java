@@ -27,7 +27,7 @@ class Solution {
                 TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
                 if (node.left != null) queue.addLast(node.left);
-                if (node.right != null) queue.addLast(node.right);
+                if (node.right != null) queue.addLast(node.right);  
             }
             level++;
         }
