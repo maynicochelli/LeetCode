@@ -23,7 +23,7 @@ class Solution {
         while(!queue.isEmpty()) {
             levels.add(new ArrayList<Integer>());
             int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            for(int i = 0; i < size; i++) {
                 TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
                 if (node.left != null) queue.addLast(node.left);
