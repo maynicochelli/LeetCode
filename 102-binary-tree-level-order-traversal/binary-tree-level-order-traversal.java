@@ -27,10 +27,12 @@ class Solution {
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.removeFirst();
                 levels.get(level).add(node.val);
-                if (node.left != null)
+                if (node.left != null) {
                     queue.addLast(node.left);
-                if (node.right != null)
+                }
+                if (node.right != null) {
                     queue.addLast(node.right);
+                }
             }
             level++;
         }
